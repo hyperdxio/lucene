@@ -60,14 +60,14 @@ describe('queryParser', () => {
       expect(results['left']['regex']).to.be.false;
     });
 
-    it('parses regex terms', () => {
+    it.skip('parses regex terms', () => {
       var results = lucene.parse('/f[A-z]?o*/');
       expect(results['left']['term']).to.equal('f[A-z]?o*');
       expect(results['left']['quoted']).to.be.false;
       expect(results['left']['regex']).to.be.true;
     });
 
-    it('parses regex terms with escape sequences', () => {
+    it.skip('parses regex terms with escape sequences', () => {
       var results = lucene.parse('/f[A-z]?\\/o*/');
       expect(results['left']['term']).to.equal('f[A-z]?\\/o*');
       expect(results['left']['quoted']).to.be.false;

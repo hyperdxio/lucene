@@ -237,6 +237,7 @@ term
 
         return result;
     }
+ /*
   / op:prefix_operator_exp? term:regex_term _*
       {
         var result = {
@@ -248,6 +249,7 @@ term
 
         return result;
     }
+    */
   / op:prefix_operator_exp? term:unquoted_term similarity:fuzzy_modifier? boost:boost_modifier? _*
     {
         var result = {
@@ -293,7 +295,7 @@ unquoted_term
 
 term_char
   = "\\" sequence:EscapeSequence { return '\\' + sequence; }
-  / '.' / [^: \t\r\n\f\{\}()"/^~\[\]]
+  / '.' / [^: \t\r\n\f\{\}()"^~\[\]]
 
 
 quoted_term
